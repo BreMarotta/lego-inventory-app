@@ -4,7 +4,7 @@ import LegoSet from './LegoSet'
 
 const LegoCollection = () => {
   const {legoSets} = useContext(MyContext)
-  console.log(legoSets)
+  
 
   const displaySets = legoSets.map(s => <LegoSet key={s.id} set={s}/>)
   return (
