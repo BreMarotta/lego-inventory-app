@@ -1,25 +1,26 @@
 import React, { useState } from 'react'
 
 const LegoSet = ({ set }) => {
+  // const borderColor = set.owner.color
+  console.log(set)
+
   const cardStyles = {
-    background: "whitesmoke",
-    paddingLeft: "3px",
-    display: "inline-grid",
-    margin: ".5rem .5rem",
-    width: "150px",
-    height: "250px"
+    paddingLeft: "25px",
+    paddingBottom: "5px",
+    border: "black solid"
   }
 
   return (
     <div style={cardStyles}>
-      <div className="image" style={{width: "100"}}>
-          <img src={set.img} alt="No Image Available" />
-        </div>
-        <div className="content">
-          <p>{set.name}</p>
+      <a className="image" >
+          <img style={{width: "150px"}} src={set.img} alt="No Image Available" />
+        </a>
+        <a className="content" style={{marginRight: "75px",float: "right"}}>
+          <h3>{set.name}</h3>
+          <hr/>
           <p>Pieces: {set.pieces}</p>
           <p>Set Number: {set.set_number}</p>
-        </div>
+        </a>
     </div>
   )
 }
