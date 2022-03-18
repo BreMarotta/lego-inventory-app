@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MyContext } from './MyContext'
 import { NavLink } from "react-router-dom"
+import Owner from './Owner'
 
 const Navigation = () => {
+    const {owners} = useContext(MyContext)
 
     const linkStyles = {
         marginLeft: "15px",
         color: "gray"
     }
+    const ownersLinks = owners.map(o => 
+        <NavLink key={o.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/${o.id}`}>{o.name}</NavLink>)
+
+    
 
   return (
     <div
@@ -18,8 +25,7 @@ const Navigation = () => {
       }}>
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 
-          <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection/new" exact>Add New Set</NavLink>
-          {/* <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/genres" exact>Add a Lego Set!</NavLink> */}
+          {ownersLinks}
       </div>
   )
 }

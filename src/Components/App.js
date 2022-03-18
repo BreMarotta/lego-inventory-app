@@ -15,10 +15,10 @@ function App() {
             <hr/>
             <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route exact path="/lego_collection" componenet={LegoCollection}/>
+                <Route exact path="/lego_collection" component={LegoCollection}/>
                 <Route exact path="/lego_collection/new" component={AddLegoSetForm}/>
                 <Route exact path="/lego_collection/genres" component={Genre}/>
-                <Route exact path="/lego_collection/owners" component={Owner}/>
+                <Route exact path="/lego_collection/:id" component={Owner}/>
             </Switch>
         </div>
     </Router>

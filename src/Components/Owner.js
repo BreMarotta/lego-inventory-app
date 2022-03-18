@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Owner = () => {
+const Owner = (props) => {
+
   return (
-    <div>Owner</div>
+    <div>{props.match.params.id}</div>
   )
 }
 
