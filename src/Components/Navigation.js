@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { MyContext } from './MyContext'
 import { NavLink } from "react-router-dom"
+import AddLegoSetButton from './AddLegoSetButton'
 
 const Navigation = () => {
     const {owners} = useContext(MyContext)
@@ -15,14 +16,15 @@ const Navigation = () => {
   return (
     <div
       style={{
-        background: '#2F4F4F',
-        borderTop: "10px solid #2F4F4F",
-        borderBottom: "10px solid #2F4F4F",
+        background: '#191970',
+        borderTop: "10px solid #191970",
+        borderBottom: "10px solid #191970",
         paddingBottom: "10px"
       }}>
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 
           {ownersLinks}
+          <AddLegoSetButton />
       </div>
   )
 }

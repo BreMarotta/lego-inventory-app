@@ -21,14 +21,14 @@ const AddLegoSetForm = () => {
   console.log(newSet)
   const formStyles = {
     color: "white",
-    background: "#2F4F4F",
-    borderBottom: "25px solid #2F4F4F",
-    borderTop: "25px solid #2F4F4F",
-    borderLeft: "35px solid #2F4F4F",
+    background: "#191970",
+    borderBottom: "25px solid #191970",
+    borderTop: "25px solid #191970",
+    borderLeft: "35px solid #191970",
     borderRadius: "15px"
   }
   const inputStyles = {
-    border: "2px solid teal",
+    border: "2px solid #800000",
     borderRadius: "5px",
     width: "350px"
   }
