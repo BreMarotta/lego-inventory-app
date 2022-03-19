@@ -18,7 +18,8 @@ const Navigation = () => {
       style={{
         background: '#191970',
         borderTop: "10px solid #191970",
-        paddingBottom: "10px"
+        paddingBottom: "10px",
+        borderBottom: "2.5px solid black"
       }}>
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 

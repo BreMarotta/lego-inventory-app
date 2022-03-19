@@ -3,7 +3,6 @@ import { MyContext } from './MyContext'
 
 const Home = () => {
   const {owners} = useContext(MyContext)
-  console.log(owners)
   const ownerInfo = owners.map(p => <div>
     <hr/>
     <h2 >{p.name}</h2>

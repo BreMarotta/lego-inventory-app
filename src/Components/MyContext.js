@@ -27,12 +27,18 @@ const MyProvider = (props) => {
         props.history.push('/lego_collection')
     }
 
+    const updateSet = (data) => {
+        const updatedSetsList = legoSets.map(s => s.id == data.id ? data : s)
+        setLegoSets(updatedSetsList)
+    }
+
     return (
         <MyContext.Provider value={{
             legoSets: legoSets,
             owners: owners,
             genres: genres,
-            addSet: addSet
+            addSet: addSet,
+            updateSet: updateSet
         }}>
             {props.children}
         </MyContext.Provider>

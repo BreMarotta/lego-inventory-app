@@ -14,7 +14,6 @@ function App() {
         <div className="App">
             <Navigation />
             <GenreLink />
-            <hr/>
             <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/lego_collection" component={LegoCollection}/>
