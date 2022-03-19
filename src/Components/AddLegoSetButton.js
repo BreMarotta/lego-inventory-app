@@ -7,8 +7,7 @@ const AddLegoSetButton = () => {
         color: "white",
         background: "#800000",
         float: "right",
-        marginRight: "25px"
-        
+        marginRight: "25px"   
     }
     
     return (
