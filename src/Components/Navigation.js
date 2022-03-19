@@ -2,18 +2,17 @@ import React, { useContext } from 'react'
 import { MyContext } from './MyContext'
 import { NavLink } from "react-router-dom"
 import Owner from './Owner'
+import GenreLink from './GenreLink'
 
 const Navigation = () => {
-    const {owners} = useContext(MyContext)
+    const {owners, genres} = useContext(MyContext)
 
     const linkStyles = {
         marginLeft: "15px",
         color: "gray"
     }
     const ownersLinks = owners.map(o => 
-        <NavLink key={o.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/${o.id}`}>{o.name}</NavLink>)
-
-    
+        <NavLink key={o.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/${o.name}`}>{o.name}</NavLink>)    
 
   return (
     <div

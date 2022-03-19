@@ -5,6 +5,7 @@ const LegoSet = ({ set }) => {
     margin: "10px",
     paddingBottom: "5px",
     border: `solid ${set.owner.color} 5px`,
+    // border: `solid black 5px`,
     borderRadius: "25",
     display: "inline-grid",
     width: "250px",

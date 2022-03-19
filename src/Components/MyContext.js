@@ -22,22 +22,6 @@ const MyProvider = (props) => {
         
     }, [])
 
-    
-    
-    // useEffect(() => {
-    //     // fetch('http://localhost:9292/owners')
-    //     // .then(res => res.json())
-    //     // .then(data => setOwners(data))
-    // }, [])
-
-    
-
-    // useEffect(() => {
-    //     // fetch('http://localhost:9292/genres')
-    //     // .then(res => res.json())
-    //     // .then(data => setGenres(data))
-    // }, [])
-
     const addSet = (stuff) => {
         // I'm adding it to lego_sets, create a set, 
         // inform the backend
@@ -45,8 +29,6 @@ const MyProvider = (props) => {
         // ???If we went along this way, I would be updating user's sets
         // updating genre's sets
     }
-
-
 
     return (
         <MyContext.Provider value={{
