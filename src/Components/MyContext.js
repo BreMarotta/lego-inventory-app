@@ -22,15 +22,13 @@ const MyProvider = (props) => {
         
     }, [])
 
-    const addSet = (data) => {
-        const newSetIncluded = [...legoSets, data]; 
-        console.log(newSetIncluded)
-        setLegoSets(newSetIncluded)
-        // I'm adding it to lego_sets, create a set, 
-        // inform the backend
-        // update lego_sets (in state)
-        // ???If we went along this way, I would be updating user's sets
-        // updating genre's sets
+    const addSet = (data, props) => {
+        alert("hit adSet in myContext")
+        console.log(data)
+        console.log(legoSets)
+        setLegoSets([...legoSets, data])
+        console.log(legoSets)
+        props.history.push('/lego_collection')
     }
 
     return (

@@ -11,11 +11,15 @@ const GenreLink = () => {
     }
 
     const genresLinks = genres.map(g => 
-        <NavLink key={g.id} to={`/lego_collection/genres/${g.id}`}>
-            <button> {g.name} </button>
+        <NavLink key={g.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/genres/${g.id}`} >{g.name}
         </NavLink>)  
     return (
-        <div>
+        <div style={{
+            background: '#191970',
+
+            borderBottom: "10px solid #191970",
+            paddingBottom: "10px"
+          }}>
             {genresLinks}
         </div>
     )

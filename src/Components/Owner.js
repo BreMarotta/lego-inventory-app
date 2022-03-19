@@ -3,7 +3,7 @@ import { MyContext } from './MyContext'
 import LegoSet from './LegoSet'
 
 const Owner = (props) => {
-  const {legoSets, owners} = useContext(MyContext)
+  const {legoSets} = useContext(MyContext)
 
   const ownersSets = legoSets.filter(set => set.owner.name == props.match.params.name)
 
@@ -12,7 +12,7 @@ const Owner = (props) => {
   return (
     <div style={{paddingLeft: "15px", paddingRight: "15px", paddingBottom: "15px"}}>
       <h3>{props.match.params.name}</h3>
-      <div>{displaySets}</div>
+      {displaySets}
     </div>
   )
 }

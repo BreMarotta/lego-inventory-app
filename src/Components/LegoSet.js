@@ -5,9 +5,8 @@ const LegoSet = ({ set }) => {
   const {owners} = useContext(MyContext)
   const cardStyles = {
     margin: "10px",
-    paddingBottom: "5px",
+    // paddingBottom: "5px",
     border: `solid ${set.owner.color} 5px`,
-    borderRadius: "25",
     display: "inline-grid",
     width: "250px",
     height: "400px"
@@ -16,7 +15,7 @@ const LegoSet = ({ set }) => {
   const buttonStyles = {
       padding: "10px",
       color: "white",
-      background: "#800000",
+      background: "#6A5ACD",
       width: "220px"
   }
 

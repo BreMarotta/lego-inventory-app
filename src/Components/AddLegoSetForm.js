@@ -3,6 +3,7 @@ import { MyContext } from './MyContext'
 
 const AddLegoSetForm = (props) => {
   const {owners, genres, addSet} = useContext(MyContext)
+  
   const [newSet, setNewSet] = useState({
     set_number: '',
     pieces: '',
@@ -11,16 +12,6 @@ const AddLegoSetForm = (props) => {
     owner_id: '',
     genre_id: ''
   })
-
-  const handleChange = (e) => {
-    console.log(e)
-    setNewSet({
-        ...newSet, [e.target.name]: e.target.value
-    })
-  }
-
-  const ownersDropDown = owners.map(x => <option value={x.id}>{x.name}</option>)
-  const genresDropDown = genres.map(x => <option value={x.id}>{x.name}</option>)
 
   const formStyles = {
     color: "white",
@@ -36,6 +27,15 @@ const AddLegoSetForm = (props) => {
     width: "350px"
   }
 
+  const handleChange = (e) => {
+    setNewSet({
+        ...newSet, [e.target.name]: e.target.value
+    })
+  }
+
+  const ownersDropDown = owners.map(x => <option value={x.id}>{x.name}</option>)
+  const genresDropDown = genres.map(x => <option value={x.id}>{x.name}</option>)
+
   const handleNewSetSubmit = (e) => {
     e.preventDefault()
     const configurationObject = {
@@ -49,8 +49,8 @@ const AddLegoSetForm = (props) => {
   fetch(`http://localhost:9292/lego_sets`, configurationObject)
   .then(res => res.json())
   .then(data => {
-    addSet(data)
-    props.history.push('/lego_collection')
+    addSet(data, props)
+  //   props.history.push(`/genres/${newSet.genre_id}`)
   })
   }
 
@@ -66,13 +66,11 @@ const AddLegoSetForm = (props) => {
           <input name="pieces" onChange={handleChange}type="text" style={inputStyles}/><br/>
         <label>Image Link:</label><br/>
           <input name="img" onChange={handleChange}type="text" style={inputStyles}/><br/>
-        {/* <label style={{paddingLeft: "15px", paddingRight: "10px"}}>Owner:</label> */}
-        <select  name="owner_id" onChange={handleChange} >
+        <select style={{paddingLeft: "35px", paddingRight: "10px"}} name="owner_id" onChange={handleChange} >
           <option>Select Owner</option>
           {ownersDropDown}
         </select>
-        {/* <label style={{paddingLeft: "35px", paddingRight: "10px"}}>Genre:</label> */}
-        <select  name="genre_id" onChange={handleChange}>
+        <select style={{paddingLeft: "35px", paddingRight: "10px"}} name="genre_id" onChange={handleChange}>
           <option>Select Genre</option>
           {genresDropDown}
           <option value="newGenre">Other</option>

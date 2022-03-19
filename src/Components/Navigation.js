@@ -18,7 +18,6 @@ const Navigation = () => {
       style={{
         background: '#191970',
         borderTop: "10px solid #191970",
-        borderBottom: "10px solid #191970",
         paddingBottom: "10px"
       }}>
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 

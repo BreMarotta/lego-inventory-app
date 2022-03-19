@@ -5,7 +5,7 @@ const AddLegoSetButton = () => {
     const linkStyles = {
         padding: "10px",
         color: "white",
-        background: "#800000",
+        background: "#6A5ACD",
         float: "right",
         marginRight: "25px"   
     }
