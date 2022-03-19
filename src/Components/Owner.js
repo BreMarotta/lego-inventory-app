@@ -10,7 +10,7 @@ const Owner = (props) => {
   const displaySets = ownersSets.map(x => <LegoSet key={x.id} set={x} />)
 
   const owner = owners.find(owner => owner.id == props.match.params.id)
-  console.log(owner)
+
 
   return (
     <div style={{paddingLeft: "15px", paddingRight: "15px", paddingBottom: "15px"}}>
