@@ -4,14 +4,11 @@ import LegoSet from './LegoSet'
 
 const Owner = (props) => {
   const {legoSets, owners} = useContext(MyContext)
+  console.log(props)
 
   const ownersSets = legoSets.filter(set => set.owner.name == props.match.params.name)
 
   const displaySets = ownersSets.map(x => <LegoSet key={x.id} set={x} />)
-
-  // const owner = owners.find(owner => owner.id == props.match.params.id)
-
-
 
   return (
     <div style={{paddingLeft: "15px", paddingRight: "15px", paddingBottom: "15px"}}>

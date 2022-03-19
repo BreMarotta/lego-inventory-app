@@ -20,7 +20,7 @@ function App() {
                 <Route exact path="/lego_collection" component={LegoCollection}/>
                 <Route exact path="/lego_collection/new" component={AddLegoSetForm}/>
                 <Route exact path="/lego_collection/genres/:id" component={Genre}/>
-                <Route exact path="/lego_collection/:name" component={Owner}/>
+                <Route exact path="/lego_collection/owners/:name" component={Owner}/>
             </Switch>
         </div>
     </Router>
