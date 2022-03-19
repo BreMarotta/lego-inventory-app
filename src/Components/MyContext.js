@@ -23,11 +23,7 @@ const MyProvider = (props) => {
     }, [])
 
     const addSet = (data, props) => {
-        alert("hit adSet in myContext")
-        console.log(data)
-        console.log(legoSets)
         setLegoSets([...legoSets, data])
-        console.log(legoSets)
         props.history.push('/lego_collection')
     }
 
