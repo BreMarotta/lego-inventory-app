@@ -22,7 +22,10 @@ const MyProvider = (props) => {
         
     }, [])
 
-    const addSet = (stuff) => {
+    const addSet = (data) => {
+        const newSetIncluded = [...legoSets, data]; 
+        console.log(newSetIncluded)
+        setLegoSets(newSetIncluded)
         // I'm adding it to lego_sets, create a set, 
         // inform the backend
         // update lego_sets (in state)

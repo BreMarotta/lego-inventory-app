@@ -1,24 +1,27 @@
 import React, { useContext, useState } from 'react'
 import { MyContext } from './MyContext'
 
-const AddLegoSetForm = () => {
-  const {owners, genres} = useContext(MyContext)
+const AddLegoSetForm = (props) => {
+  const {owners, genres, addSet} = useContext(MyContext)
   const [newSet, setNewSet] = useState({
     set_number: '',
     pieces: '',
     name: '',
     img: '',
+    owner_id: '',
+    genre_id: ''
   })
 
-  const ownersDropDown = owners.map(x => <option value="x.id">{x.name}</option>)
-  const genresDropDown = genres.map(x => <option value="x.id">{x.name}</option>)
-
   const handleChange = (e) => {
+    console.log(e)
     setNewSet({
         ...newSet, [e.target.name]: e.target.value
     })
   }
-  console.log(newSet)
+
+  const ownersDropDown = owners.map(x => <option  value={x.id}>{x.name}</option>)
+  const genresDropDown = genres.map(x => <option value={x.id}>{x.name}</option>)
+
   const formStyles = {
     color: "white",
     background: "#191970",
@@ -45,7 +48,10 @@ const AddLegoSetForm = () => {
   };
   fetch(`http://localhost:9292/lego_sets`, configurationObject)
   .then(res => res.json())
-  .then(data => console.log(data))
+  .then(data => {
+    addSet(data)
+    props.history.push('/lego_collection')
+  })
   }
 
   return (
@@ -61,11 +67,11 @@ const AddLegoSetForm = () => {
         <label>Image Link:</label><br/>
         <input name="img" onChange={handleChange}type="text" style={inputStyles}/><br/>
         <label style={{paddingLeft: "15px", paddingRight: "10px"}}>Owner:</label>
-        <select >
+        <select  name="owner_id" onChange={handleChange}>
           {ownersDropDown}
         </select>
         <label style={{paddingLeft: "35px", paddingRight: "10px"}}>Genre:</label>
-        <select >
+        <select  name="genre_id" onChange={handleChange}>
           {genresDropDown}
           <option value="newGenre">Other</option>
         </select><br/>
