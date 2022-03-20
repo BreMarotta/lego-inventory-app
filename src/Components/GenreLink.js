@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { MyContext } from './MyContext'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const GenreLink = () => {
     const {genres} = useContext(MyContext)
@@ -11,12 +11,11 @@ const GenreLink = () => {
     }
 
     const genresLinks = genres.map(g => 
-        <NavLink key={g.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/genres/${g.id}`} >{g.name}
-        </NavLink>)  
+        <Link key={g.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/genres/${g.id}`} >{g.name}
+        </Link>)  
     return (
         <div style={{
             background: '#191970',
-
             borderBottom: "10px solid #191970",
             paddingBottom: "10px"
           }}>

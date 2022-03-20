@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { MyContext } from './MyContext'
 import { NavLink } from "react-router-dom"
 import AddLegoSetButton from './AddLegoSetButton'
+import Search from './Search'
 
 const Navigation = () => {
     const {owners} = useContext(MyContext)
@@ -25,6 +26,8 @@ const Navigation = () => {
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 
           {ownersLinks}
           <AddLegoSetButton />
+          <Search />
+          
       </div>
   )
 }

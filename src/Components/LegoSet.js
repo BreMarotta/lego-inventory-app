@@ -3,24 +3,24 @@ import { MyContext } from './MyContext'
 
 const LegoSet = ({ set }) => {
   const {owners, updateSet} = useContext(MyContext)
+  const [infoStyle, setInfoStyle] =useState("125")
   const [newOwner, setNewOwner] =useState({
     owner_id: '',
     id: set.id
   })
 
   const cardStyles = {
-    margin: "10px",
-    border: `solid ${set.owner.color} 5px`,
+    margin: "5px",
+    border: `solid ${set.owner.color} 3px`,
     display: "inline-grid",
-    width: "300px",
-    height: "400px"
+    width: "auto"
   }
 
   const buttonStyles = {
       padding: "10px",
       color: "white",
       background: "#6A5ACD",
-      width: "220px"
+      width: "100px"
   }
 
   const [showFormStyle, setShowFormStyle] = useState('hidden')
@@ -58,15 +58,25 @@ const LegoSet = ({ set }) => {
 
   const ownersDropDown = owners.map(x => <option value={x.id}>{x.name}</option>)
 
+  
+  // const showInfo = (e) => {
+  //   console.log("should show card")
+  //   setInfoStyle("400")
+  // }
+  // const hideInfo = (e) => {
+  //   console.log("should hide card")
+  //   setInfoStyle("125")
+  // }
   return (
     <div style={cardStyles}>
+     {/* onMouseEnter={showInfo} onMouseLeave={hideInfo} */}
       <a style={{margin: "auto"}}>
-          <img style={{height: "175px"}} src={set.img} alt="No Image Available" />
-        </a>
-        <a className="content" style={{paddingLeft: "10px"}}>
-          <h3 style={{alignContent: "center"}}>{set.name}</h3>
-          <p style={{paddingLeft: "15px"}}>Pieces: {set.pieces}</p>
-          <p style={{paddingLeft: "15px"}}>Set Number: {set.set_number}</p>
+          <img style={{height: "120px"}} src={set.img} alt="No Image Available" />
+      </a>
+        <span className="content" >
+          <h3 style={{float: "center"}}>{set.name}</h3>
+          {/* <p style={{paddingLeft: "15px"}}>Pieces: {set.pieces}</p>
+          <p style={{paddingLeft: "15px"}}>Set Number: {set.set_number}</p> */}
           <button style={buttonStyles} onClick={toggleForm}>{toggleButtonText}</button>
           <form style={{visibility: showFormStyle}} onSubmit={handleNewOwnerSubmit}>
             <select name="owner_id" onChange={handleChange}>
@@ -74,7 +84,7 @@ const LegoSet = ({ set }) => {
             </select>
             <input type="submit"/>
           </form>
-        </a>
+        </span>
     </div>
   )
 }

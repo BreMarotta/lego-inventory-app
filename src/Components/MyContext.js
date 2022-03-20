@@ -6,6 +6,7 @@ const MyProvider = (props) => {
     const [legoSets, setLegoSets] = useState([])
     const [owners, setOwners] = useState([])
     const [genres, setGenres] = useState([])
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         fetch('http://localhost:9292/lego_sets')
@@ -38,7 +39,8 @@ const MyProvider = (props) => {
             owners: owners,
             genres: genres,
             addSet: addSet,
-            updateSet: updateSet
+            updateSet: updateSet,
+            setSearch: setSearch
         }}>
             {props.children}
         </MyContext.Provider>

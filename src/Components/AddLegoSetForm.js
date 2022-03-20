@@ -74,7 +74,6 @@ const AddLegoSetForm = (props) => {
         <select style={{paddingLeft: "35px", paddingRight: "10px"}} name="genre_id" onChange={handleChange}>
           <option>Select Genre</option>
           {genresDropDown}
-          <option value="newGenre">Other</option>
         </select><br/>
         <hr/>
 

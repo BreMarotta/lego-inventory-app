@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 const AddLegoSetButton = () => {
     const linkStyles = {
-        padding: "10px",
         color: "white",
         background: "#6A5ACD",
         float: "right",
@@ -12,7 +11,7 @@ const AddLegoSetButton = () => {
     
     return (
         <Link to={'/lego_collection/new'}>
-            <button style={linkStyles}>Add Lego Set To Collection</button>
+            <button style={linkStyles}>Add Lego Set</button>
         </Link>
     )
 }

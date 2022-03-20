@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './Home'
 import Navigation from './Navigation'
-import GenreLink from './GenreLink'
 import LegoCollection from './LegoCollection'
 import AddLegoSetForm from './AddLegoSetForm'
 import Genre from './Genre'
@@ -13,7 +12,6 @@ function App() {
     <Router>
         <div className="App">
             <Navigation />
-            <GenreLink />
             <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/lego_collection" component={LegoCollection}/>
