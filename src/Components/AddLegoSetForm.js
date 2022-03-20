@@ -19,7 +19,8 @@ const AddLegoSetForm = (props) => {
     borderBottom: "25px solid #191970",
     borderTop: "25px solid #191970",
     borderLeft: "35px solid #191970",
-    borderRadius: "15px"
+    borderRadius: "15px",
+    padding: "25px"
   }
   const inputStyles = {
     border: "2px solid teal",

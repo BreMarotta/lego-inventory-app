@@ -12,7 +12,7 @@ const LegoSet = ({ set }) => {
     margin: "10px",
     border: `solid ${set.owner.color} 5px`,
     display: "inline-grid",
-    width: "250px",
+    width: "300px",
     height: "400px"
   }
 
