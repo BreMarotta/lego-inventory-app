@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { MyContext } from './MyContext'
+import { Link } from 'react-router-dom'
 
 const LegoSet = ({ set }) => {
   const {owners, updateSet} = useContext(MyContext)
-  const [infoStyle, setInfoStyle] =useState("125")
   const [newOwner, setNewOwner] =useState({
     owner_id: '',
     id: set.id
@@ -58,24 +58,14 @@ const LegoSet = ({ set }) => {
   const ownersDropDown = owners.map(x => <option value={x.id}>{x.name}</option>)
 
   
-  // const showInfo = (e) => {
-  //   console.log("should show card")
-  //   setInfoStyle("400")
-  // }
-  // const hideInfo = (e) => {
-  //   console.log("should hide card")
-  //   setInfoStyle("125")
-  // }
   return (
-    <div style={cardStyles}>
-     {/* onMouseEnter={showInfo} onMouseLeave={hideInfo} */}
+    <Link key={set.id} to={`/lego_collection/${set.id}`} set={set} style={cardStyles}>
       <a style={{margin: "auto"}}>
           <img style={{height: "120px", maxWidth: "150px"}} src={set.img} alt="No Image Available" />
       </a>
         <span className="content">
           <h3 style={{fontSize: "10px"}}>{set.name}</h3>
-          {/* <p style={{paddingLeft: "15px"}}>Pieces: {set.pieces}</p>
-          <p style={{paddingLeft: "15px"}}>Set Number: {set.set_number}</p> */}
+
           <button style={buttonStyles} onClick={toggleForm}>{toggleButtonText}</button>
           <form style={{visibility: showFormStyle}} onSubmit={handleNewOwnerSubmit}>
             <select name="owner_id" onChange={handleChange}>
@@ -84,7 +74,7 @@ const LegoSet = ({ set }) => {
             <input type="submit"/>
           </form>
         </span>
-    </div>
+    </Link>
   )
 }
 

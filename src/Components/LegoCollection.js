@@ -8,7 +8,7 @@ const LegoCollection = () => {
   const displaySets = legoSets.map(s => <LegoSet key={s.id} set={s}/>)
 
   return (
-    <div>
+    <div style={{paddingLeft: "15px"}}>
       <h2>Family Collection</h2>
       {displaySets}
     </div>
