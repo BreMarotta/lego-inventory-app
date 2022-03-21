@@ -13,7 +13,7 @@ const Genre = (props) => {
   const displaySets = genresSets.map(x => <LegoSet key={x.id} set={x} />)
 
   return (
-    <div style={{paddingLeft: "15px", paddingRight: "15px", paddingBottom: "15px"}}>
+    <div >
       <GenreLink />
       <h3>{props.match.params.name}</h3>
       <div>{displaySets}</div>

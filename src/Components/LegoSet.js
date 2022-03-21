@@ -12,15 +12,14 @@ const LegoSet = ({ set }) => {
   const cardStyles = {
     margin: "5px",
     border: `solid ${set.owner.color} 3px`,
-    display: "inline-grid",
-    width: "auto"
+    display: "inline-grid"
   }
 
   const buttonStyles = {
-      padding: "10px",
+      padding: "5px",
       color: "white",
       background: "#6A5ACD",
-      width: "100px"
+      width: "80px"
   }
 
   const [showFormStyle, setShowFormStyle] = useState('hidden')
@@ -71,10 +70,10 @@ const LegoSet = ({ set }) => {
     <div style={cardStyles}>
      {/* onMouseEnter={showInfo} onMouseLeave={hideInfo} */}
       <a style={{margin: "auto"}}>
-          <img style={{height: "120px"}} src={set.img} alt="No Image Available" />
+          <img style={{height: "120px", maxWidth: "150px"}} src={set.img} alt="No Image Available" />
       </a>
-        <span className="content" >
-          <h3 style={{float: "center"}}>{set.name}</h3>
+        <span className="content">
+          <h3 style={{fontSize: "10px"}}>{set.name}</h3>
           {/* <p style={{paddingLeft: "15px"}}>Pieces: {set.pieces}</p>
           <p style={{paddingLeft: "15px"}}>Set Number: {set.set_number}</p> */}
           <button style={buttonStyles} onClick={toggleForm}>{toggleButtonText}</button>
