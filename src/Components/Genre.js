@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { MyContext } from './MyContext'
 import LegoSet from './LegoSet'
+import GenreLink from './GenreLink'
 
 const Genre = (props) => {
   const {genres, legoSets} = useContext(MyContext)
@@ -13,6 +14,7 @@ const Genre = (props) => {
 
   return (
     <div style={{paddingLeft: "15px", paddingRight: "15px", paddingBottom: "15px"}}>
+      <GenreLink />
       <h3>{props.match.params.name}</h3>
       <div>{displaySets}</div>
     </div>

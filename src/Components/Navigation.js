@@ -25,6 +25,7 @@ const Navigation = () => {
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 
           <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 
           {ownersLinks}
+          <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection/genres" exact>View Genres</NavLink> 
           <AddLegoSetButton />
           <Search />
           
