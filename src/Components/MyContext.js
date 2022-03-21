@@ -22,7 +22,6 @@ const MyProvider = (props) => {
         .then(data => setGenres(data))
         
     }, [])
-    console.log(genres)
 
     const addSet = (data, props) => {
         setLegoSets([...legoSets, data])
