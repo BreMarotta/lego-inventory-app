@@ -59,9 +59,11 @@ const LegoSet = ({ set }) => {
 
   
   return (
-    <Link key={set.id} to={`/lego_collection/${set.id}`} set={set} style={cardStyles}>
+    <div style={cardStyles}>
       <a style={{margin: "auto"}}>
+        <Link key={set.id} to={`/lego_collection/${set.id}`} set={set}>
           <img style={{height: "120px", maxWidth: "150px"}} src={set.img} alt="No Image Available" />
+          </Link>
       </a>
         <span className="content">
           <h3 style={{fontSize: "10px"}}>{set.name}</h3>
@@ -74,7 +76,8 @@ const LegoSet = ({ set }) => {
             <input type="submit"/>
           </form>
         </span>
-    </Link>
+    
+    </div>
   )
 }
 

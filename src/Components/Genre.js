@@ -15,7 +15,6 @@ const Genre = (props) => {
   return (
     <div >
       <GenreLink />
-      <h3>{props.match.params.name}</h3>
       <div>{displaySets}</div>
     </div>
   )
