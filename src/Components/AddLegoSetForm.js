@@ -51,7 +51,6 @@ const AddLegoSetForm = (props) => {
   .then(res => res.json())
   .then(data => {
     addSet(data, props)
-  //   props.history.push(`/genres/${newSet.genre_id}`)
   })
   }
 
@@ -76,9 +75,6 @@ const AddLegoSetForm = (props) => {
           {genresDropDown}
         </select><br/>
         <hr/>
-
-
-
         <input type="submit"/>
 
       </form>
@@ -87,11 +83,3 @@ const AddLegoSetForm = (props) => {
 }
 
 export default AddLegoSetForm
-
-
-// <select>
-//   <option value="grapefruit">Grapefruit</option>
-//   <option value="lime">Lime</option>
-//   <option selected value="coconut">Coconut</option>
-//   <option value="mango">Mango</option>
-// </select>
