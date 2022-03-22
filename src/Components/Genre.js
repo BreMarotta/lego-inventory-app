@@ -4,7 +4,7 @@ import LegoSet from './LegoSet'
 import GenreLink from './GenreLink'
 
 const Genre = (props) => {
-  const {genres, legoSets} = useContext(MyContext)
+  const {legoSets} = useContext(MyContext)
   const id = props.match.params.id
 
 
