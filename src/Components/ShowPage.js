@@ -1,17 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from './MyContext'
 
 const ShowPage = (props) => {
     const {legoSets} = useContext(MyContext)
-    console.log(props)
-    const id = props.match.params.id
-    console.log(id)
+    const [display, setDisplay] =useState({})
+ 
+//  useEffect(() => {
+        const id = props.match.params.id
+        const setArray = legoSets.filter(s => s.id == id)
+        setDisplay(setArray[0])
+//         return function cleanup(){
 
-    const setArray = legoSets.filter(s => s.id == id)
+//         }
+//    })
+        
+        console.log(display)
 
-    console.log(setArray)
-    const display = setArray[0]
-    console.log(display)
   return (
     <div style={{paddingLeft: "50px"}}>
         <a> 

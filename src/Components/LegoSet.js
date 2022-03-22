@@ -60,11 +60,11 @@ const LegoSet = ({ set }) => {
   
   return (
     <div style={cardStyles}>
-      <a style={{margin: "auto"}}>
-        <Link key={set.id} to={`/lego_collection/${set.id}`} set={set}>
+      <p style={{margin: "auto"}}>
+        <Link key={set.id} to={`/lego_collection/sets/${set.id}`} set={set}>
           <img style={{height: "120px", maxWidth: "150px"}} src={set.img} alt="No Image Available" />
           </Link>
-      </a>
+      </p>
         <span className="content">
           <h3 style={{fontSize: "10px"}}>{set.name}</h3>
 
