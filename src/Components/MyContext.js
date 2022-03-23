@@ -8,6 +8,7 @@ const MyProvider = (props) => {
     const [genres, setGenres] = useState([])
     const [search, setSearch] = useState("")
 
+
     useEffect(() => {
         fetch('http://localhost:9292/lego_sets')
         .then(res => res.json())
@@ -33,14 +34,22 @@ const MyProvider = (props) => {
         setLegoSets(updatedSetsList)
     }
 
+    const updateSearch = (searchedNumber) => {
+        setSearch(searchedNumber)
+    }
+    
+    const searchFilteredSets = legoSets.filter((set) => set.set_number == (search))
+
+    console.log(searchFilteredSets)
+    
     return (
         <MyContext.Provider value={{
-            legoSets: legoSets,
+            legoSets: searchFilteredSets,
             owners: owners,
             genres: genres,
             addSet: addSet,
             updateSet: updateSet,
-            setSearch: setSearch
+            updateSearch: updateSearch
         }}>
             {props.children}
         </MyContext.Provider>
