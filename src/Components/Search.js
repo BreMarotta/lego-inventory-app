@@ -4,18 +4,10 @@ import { MyContext } from './MyContext'
 const Search = () => {
     const {updateSearch, filterSets} = useContext(MyContext)
 
-    // const [searched, setSearched] = useState({
-    //     searchedNumber: ''
-    // })
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     filterSets()
-    // }
 
     const handleChange = (e) => {
         updateSearch(e.target.value)
-        filterSets()
+        // filterSets()
     }
     const searchStyle = {
         color: "white",
@@ -24,8 +16,8 @@ const Search = () => {
     }
   return (
     <form className="searchbar" style={searchStyle}>
-        <button type="submit">🔍</button>
-        <input style={{width: "300px", paddingTop: "4px"}} type="text" id="search" placeholder="search by Lego Set Number..." name="searchNumber" onChange={handleChange}/>
+        <button>🔍</button>
+        <input style={{width: "300px", paddingTop: "4px"}} type="text" id="search" placeholder="search for a Lego Set..." name="searchNumber" onChange={handleChange}/>
         
     </form>
   );
