@@ -5,14 +5,13 @@ import AddLegoSetButton from './AddLegoSetButton'
 import Search from './Search'
 
 const Navigation = () => {
-    const {owners} = useContext(MyContext)
+  const {owners} = useContext(MyContext)
 
-    const linkStyles = {
-        marginLeft: "15px",
-        color: "gray"
-    }
-    const ownersLinks = owners.map(o => 
-        <NavLink key={o.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/owners/${o.name}`}>{o.name}</NavLink>)    
+  const linkStyles = {
+      marginLeft: "15px",
+      color: "gray"
+  }
+  const ownersLinks = owners.map(o => <NavLink key={o.id} style={linkStyles} activeStyle={{color: "white"}} to={`/lego_collection/owners/${o.name}`}>{o.name}</NavLink>)    
 
   return (
     <div
@@ -22,14 +21,13 @@ const Navigation = () => {
         paddingBottom: "10px",
         borderBottom: "2.5px solid black"
       }}>
-          <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 
-          <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 
-          {ownersLinks}
-          <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection/genres" exact>View Genres</NavLink> 
-          <AddLegoSetButton />
-          <Search />
-          
-      </div>
+      <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 
+      <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 
+      {ownersLinks}
+      <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection/genres" exact>View Genres</NavLink> 
+      <AddLegoSetButton />
+      <Search />      
+    </div>
   )
 }
 

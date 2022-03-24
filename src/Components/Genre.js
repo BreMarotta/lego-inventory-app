@@ -7,7 +7,6 @@ const Genre = (props) => {
   const {legoSets} = useContext(MyContext)
   const id = props.match.params.id
 
-
   const genresSets = legoSets.filter(x => x.genre_id == id)
 
   const displaySets = genresSets.map(x => <LegoSet key={x.id} set={x} />)

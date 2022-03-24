@@ -25,58 +25,55 @@ const LegoSet = ({ set }) => {
   const [showFormStyle, setShowFormStyle] = useState('hidden')
     
   const toggleForm = () => {
-      let newStyle= showFormStyle == 'hidden' ?  '' :  'hidden'
-      setShowFormStyle(newStyle)
-    }
+    let newStyle= showFormStyle == 'hidden' ?  '' :  'hidden'
+    setShowFormStyle(newStyle)
+  }
 
   const toggleButtonText = set.owner.name === "WishList" ? "Buy Set" : "Trade Set"
   
-    const handleChange = (e) => {
-      setNewOwner({
-        ...newOwner, [e.target.name]: e.target.value
-      })
-    }
+  const handleChange = (e) => {
+    setNewOwner({
+      ...newOwner, [e.target.name]: e.target.value
+    })
+  }
 
-    const handleNewOwnerSubmit = (e) => {
-      e.preventDefault()
-      const configurationObject = {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(newOwner),
-      };
-      fetch(`http://localhost:9292/lego_sets/${set.id}`, configurationObject)
-      .then(res => res.json())
-      .then(data => {
-        updateSet(data)
-        toggleForm()
-      })
-    }
+  const handleNewOwnerSubmit = (e) => {
+    e.preventDefault()
+    const configurationObject = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(newOwner),
+    };
+    fetch(`http://localhost:9292/lego_sets/${set.id}`, configurationObject)
+    .then(res => res.json())
+    .then(data => {
+      updateSet(data)
+      toggleForm()
+    })
+  }
 
   const ownersDropDown = owners.map(x => <option value={x.id}>{x.name}</option>)
-
   
   return (
     <div style={cardStyles}>
       <p style={{margin: "auto"}}>
-        <Link to={`/lego_collection/sets/${set.id}`} set={set}>
+        <Link to={`/lego_collection/${set.id}`} set={set}>
           <img style={{height: "120px", maxWidth: "150px"}} src={set.img} alt="No Image Available" />
         </Link>
       </p>
-        <span className="content">
-          <h3 style={{fontSize: "10px"}}>{set.name}</h3>
-
-          <button style={buttonStyles} onClick={toggleForm}>{toggleButtonText}</button>
-          <form style={{visibility: showFormStyle}} onSubmit={handleNewOwnerSubmit}>
-            <select name="owner_id" onChange={handleChange}>
-              <option>New Owner</option>{ownersDropDown}
-            </select>
-            <input type="submit"/>
-          </form>
-        </span>
-    
+      <span className="content">
+        <h3 style={{fontSize: "10px"}}>{set.name}</h3>
+        <button style={buttonStyles} onClick={toggleForm}>{toggleButtonText}</button>
+        <form style={{visibility: showFormStyle}} onSubmit={handleNewOwnerSubmit}>
+          <select name="owner_id" onChange={handleChange}>
+            <option>New Owner</option>{ownersDropDown}
+          </select>
+          <input type="submit"/>
+        </form>
+      </span>    
     </div>
   )
 }

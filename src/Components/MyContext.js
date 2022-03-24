@@ -34,8 +34,8 @@ const MyProvider = (props) => {
         setLegoSets(updatedSetsList)
     }
 
-    const updateSearch = (searchedNumber) => {
-        setSearch(searchedNumber)
+    const updateSearch = (searchedInfo) => {
+        setSearch(searchedInfo)
     }
 
     const displaySets = legoSets.filter((set) => set.name.toLowerCase().includes(search.toLowerCase()));
@@ -49,7 +49,6 @@ const MyProvider = (props) => {
             addSet: addSet,
             updateSet: updateSet,
             updateSearch: updateSearch
-            // filterSets: filterSets
         }}>
             {props.children}
         </MyContext.Provider>
