@@ -37,19 +37,19 @@ const MyProvider = (props) => {
     const updateSearch = (searchedNumber) => {
         setSearch(searchedNumber)
     }
-    
-    const searchFilteredSets = legoSets.filter((set) => set.set_number == (search))
 
-    console.log(searchFilteredSets)
+    const displaySets = legoSets.filter((set) => set.name.toLowerCase().includes(search.toLowerCase()));
+    
     
     return (
         <MyContext.Provider value={{
-            legoSets: searchFilteredSets,
+            legoSets: displaySets,
             owners: owners,
             genres: genres,
             addSet: addSet,
             updateSet: updateSet,
             updateSearch: updateSearch
+            // filterSets: filterSets
         }}>
             {props.children}
         </MyContext.Provider>
