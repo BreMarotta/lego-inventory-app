@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Family Lego Collection Inventory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Back Story
 
-## Available Scripts
+In my house, everyone and I mean EVERYONE collects Lego. Over the years, we have amassed a collection of close to 200 Lego sets. With a collection this large there is an ongoing issue of keeping track of what we have already and what we might still want. This becomes especially difficult around holidays when extended family wants to purchase a new set for one of my children. I get countless phone calls asking if we already have set x??? I can never keep track. 
 
-In the project directory, you can run:
+This SPA came to life as a way to solve the countless phone call delimia. I designed this page to specifically be user friendly for a grandparent who just wants to make sure they aren't purchasing a duplicate set. I also had in mind my kids who are excited to see a visual representation of all of thier sets. 
+
+## Getting Started:
+First, you will need to fork and clone this into a local directory. Once you navigate into the correct file, run:
 
 ### `npm start`
+This should open the app in your browser: 
+[http://localhost:3000](http://localhost:3000)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The data for this collection is stored in a sperate GitHub connected to a Ruby database. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+The user can:
 
-### `npm test`
+* View a home page with information about each owner (in this case family member). This information is obtained from the database and rendered dynamically onto the page **/**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* View the entire family collection. Each Lego set is rendered onto a card. The cards are color coded to denote who owns the set. Each card also has a button to trade the set owner. This trade shows up in the React App and persists to the database. **/lego_collection**
 
-### `npm run build`
+* When the user clicks on an image on a set card, a show page is rendered with details of that specific Lego set. **/lego_collection/:id**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* View the collection of each owner. The links in the Navigation bar are dynamically rendered from the owners table in the database. Visiting each owner's link will show the user that owner's sets. **/lego_collection/owners/:name**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* When the user clicks on the "View Genres" Link an additional navigation bar is rendered. Each genre from the genres table is a link to view all sets that belong to that genre. **/lego_collection/genres/:id**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* The search bar filters through all the sets of the collection looking for any name that includes what is entered. Based on which link you are under, this will further filter down what is displayed. 
 
-### `npm run eject`
+*  Add Lego Set button brings up a form to add a new Lego set to the collection. Once all data is entered into the form and submitted, the new set will be added to the React app and that addition will persist into the database on the back end. **/lego_collection/new**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Additional Information:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Please check out the YouTube walk through video to see all the SPA features: https://youtu.be/s19q3tU5nZI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Also check out my blog about his project: 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Special Thanks
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* to Lego for having such an amazing product that inspires creativity and problem solving.
+* my husband for having a mild Lego obsession and passing that on to me and our kids. 
