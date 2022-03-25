@@ -24,19 +24,19 @@ The user can:
 
 * View the entire family collection. Each Lego set is rendered onto a card. The cards are color coded to denote who owns the set. Each card also has a button to trade the set owner. This trade shows up in the React App and persists to the database:    **"/lego_collection"**
 
-* When the user clicks on an image on a set card, a show page is rendered with details of that specific Lego set:    **"/lego_collection/:id"**
+* View a show page for each set. When the user clicks on an image on a set card, a show page is rendered with details of that specific Lego set:    **"/lego_collection/:id"**
 
 * View the collection of each owner. The links in the Navigation bar are dynamically rendered from the owners table in the database. Visiting each owner's link will show the user that owner's sets:    **"/lego_collection/owners/:name"**
 
-* When the user clicks on the "View Genres" Link an additional navigation bar is rendered. Each genre from the genres table is a link to view all sets that belong to that genre:    **"/lego_collection/genres/:id"**
+* Sort the sets by genre. When the user clicks on the "View Genres" Link an additional navigation bar is rendered. Each genre from the genres table is a link to view all sets that belong to that genre:    **"/lego_collection/genres/:id"**
 
-* The search bar filters through all the sets of the collection looking for any name that includes what is entered. Based on which link you are under, this will further filter down what sets are displayed. 
+* Use the search bar to look for a specific set. The search bar filters through all the sets of the collection looking for any name that includes what is entered. Based on which link you are under, this will further filter down what sets are displayed. 
 
-*  Add Lego Set button brings up a form to add a new Lego set to the collection. Once all data is entered into the form and submitted, the new set will be added to the React app and that addition will persist into the database on the back end:    **"/lego_collection/new"**
+* Add a Lego set to the collection. Add Lego Set button brings up a form to add a new Lego set to the collection. Once all data is entered into the form and submitted, the new set will be added to the React app and that addition will persist into the database on the back end:    **"/lego_collection/new"**
 
 ## Additional Information:
 
-* Please check out the YouTube walk through video to see all the SPA features: https://youtu.be/s19q3tU5nZI
+* Please check out the YouTube walk through video to see all the SPA features: https://youtu.be/py0fa3kAmFk
 
 * Also check out my blog about his project: 
 

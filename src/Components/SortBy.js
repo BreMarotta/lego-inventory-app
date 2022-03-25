@@ -21,6 +21,7 @@ const SortBy = () => {
             <option value="name">Name</option>
             <option value="set_number">Set Number</option>
             <option value="pieces"># of Pieces</option>
+            <option value="owner_id">Owner</option>
         </select>
     </form>
   )
