@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { MyContext } from './MyContext'
 import { NavLink } from "react-router-dom"
 import AddLegoSetButton from './AddLegoSetButton'
+import SortBy from './SortBy'
 import Search from './Search'
 
 const Navigation = () => {
@@ -23,10 +24,14 @@ const Navigation = () => {
       }}>
       <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/" exact>Home</NavLink> 
       <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection" exact>Lego Collection</NavLink> 
-      {ownersLinks}
+      
       <NavLink style={linkStyles} activeStyle={{color: "white"}} to="/lego_collection/genres" exact>View Genres</NavLink> 
       <AddLegoSetButton />
-      <Search />      
+      
+      <Search /> 
+      <SortBy />  
+      <br/>
+      {ownersLinks}   
     </div>
   )
 }

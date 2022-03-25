@@ -66,6 +66,7 @@ const LegoSet = ({ set }) => {
       </p>
       <span className="content">
         <h3 style={{fontSize: "10px"}}>{set.name}</h3>
+        <h4 style={{fontSize: "10px"}}>Set Number: {set.set_number}</h4>
         <button style={buttonStyles} onClick={toggleForm}>{toggleButtonText}</button>
         <form style={{visibility: showFormStyle}} onSubmit={handleNewOwnerSubmit}>
           <select name="owner_id" onChange={handleChange}>

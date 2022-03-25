@@ -6,14 +6,17 @@ const MyProvider = (props) => {
     const [legoSets, setLegoSets] = useState([])
     const [owners, setOwners] = useState([])
     const [genres, setGenres] = useState([])
+    const [sort, setSort] =useState("name")
     const [search, setSearch] = useState("")
 
 
     useEffect(() => {
-        fetch('http://localhost:9292/lego_sets')
+        fetch(`http://localhost:9292/lego_sets/${sort}`)
         .then(res => res.json())
         .then(data => setLegoSets(data))
+    }, [sort])
 
+    useEffect(() =>{
         fetch('http://localhost:9292/owners')
         .then(res => res.json())
         .then(data => setOwners(data))
@@ -34,6 +37,12 @@ const MyProvider = (props) => {
         setLegoSets(updatedSetsList)
     }
 
+    const updateSort = (newArg) => {
+        console.log(newArg)
+        setSort(newArg)
+    }
+    console.log(sort)
+
     const updateSearch = (searchedInfo) => {
         setSearch(searchedInfo)
     }
@@ -48,6 +57,7 @@ const MyProvider = (props) => {
             genres: genres,
             addSet: addSet,
             updateSet: updateSet,
+            updateSort: updateSort,
             updateSearch: updateSearch
         }}>
             {props.children}

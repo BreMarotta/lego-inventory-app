@@ -13,7 +13,7 @@ const Search = () => {
   return (
     <form className="searchbar" style={searchStyle}>
       <button onClick={(e) => e.preventDefault()}>🔍</button>
-      <input style={{width: "300px", paddingTop: "4px"}} type="text" id="search" placeholder="search for a Lego Set..." name="searchNumber" onChange={(e) => updateSearch(e.target.value)}/>        
+      <input style={{width: "250px", paddingTop: "4px"}} type="text" id="search" placeholder="search for a Lego Set..." name="searchNumber" onChange={(e) => updateSearch(e.target.value)}/>        
     </form>
   );
 }

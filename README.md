@@ -1,4 +1,6 @@
-# Family Lego Collection Inventory
+# Family Lego Collection Inventory (React Frontend)
+
+Repository for Ruby/Sinatra API: https://github.com/BreMarotta/phase-3-sinatra-react-project
 
 ## The Back Story
 
