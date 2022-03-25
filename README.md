@@ -6,7 +6,7 @@ Repository for Ruby/Sinatra API: https://github.com/BreMarotta/phase-3-sinatra-r
 
 In my house, everyone and I mean EVERYONE collects Lego. Over the years, we have amassed a collection of close to 200 Lego sets. With a collection this large there is an ongoing issue of keeping track of what we have already and what we might still want. This becomes especially difficult around holidays when extended family wants to purchase a new set for one of my children. I get countless phone calls asking if we already have set x??? I can never keep track. 
 
-This SPA came to life as a way to solve the countless phone call delimia. I designed this page to specifically be user friendly for a grandparent who just wants to make sure they aren't purchasing a duplicate set. I also had in mind my kids who are excited to see a visual representation of all of thier sets. 
+This SPA came to life as a way to solve the countless phone call dilemma. I designed this page to specifically be user friendly for a grandparent who just wants to make sure they aren't purchasing a duplicate set. I also had in mind my kids who are excited to see a visual representation of all of thier sets. 
 
 ## Getting Started:
 First, you will need to fork and clone this repository into a local directory. Once you navigate into the correct file, run:
@@ -38,7 +38,7 @@ The user can:
 
 * Please check out the YouTube walk through video to see all the SPA features: https://youtu.be/py0fa3kAmFk
 
-* Also check out my blog about his project: 
+* Also check out my blog about his project: https://medium.com/@bremarotta/building-a-sinatra-ruby-api-a-lego-set-inventory-3f319e8a0ee7
 
 
 
